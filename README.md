@@ -1,5 +1,4 @@
-> ### ⚠️ Warning
-> This is against Schoolmouv.
+> **WARNING** This is against Schoolmouv.
 
 # Schoolmouv Scrapper
 A python bot to download Schoolmouv lessons, bypassing the premium restriction.
