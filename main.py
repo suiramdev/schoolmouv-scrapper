@@ -13,6 +13,17 @@ fetchURLs = [ # HTML pages to download
     "/personnages-historique"
 ]
 
+removeClass = [ # HTML classes to remove
+    "menu-content",
+    "layout-pre-header",
+    "menu-with-logo logo-fixed",
+    "header-fixed",
+    "breadcrumb",
+    "title-bloc",
+    "sheet-navigation",
+    "pdf-link-wrapper mobile-link"
+]
+
 if __name__ == "__main__":
     for subjectEl in BeautifulSoup(requests.get((baseURL + classURL)).text, features="html.parser").find_all(class_="subject-content"):
         parentFolder = subjectEl.get("href").split("/")[-1]
@@ -25,3 +36,4 @@ if __name__ == "__main__":
                     os.makedirs(os.path.dirname(fileName), exist_ok=True)
                     with open(fileName, "w", encoding="utf-8") as f:
                         f.write(request.text)
+                    print(f"{fileName} downloaded")
